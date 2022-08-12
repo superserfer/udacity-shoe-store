@@ -6,12 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.example.shoestore.databinding.FragmentInstructionBinding
 import com.example.shoestore.databinding.FragmentLoginBinding
+import com.example.shoestore.models.ShoeListViewModel
 
 class LoginFragment : Fragment() {
     lateinit var binding: FragmentLoginBinding
+    private val viewModel: ShoeListViewModel by activityViewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -19,6 +23,7 @@ class LoginFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_login, container, false
         )
+        binding.shoeListViewModel = viewModel
         binding.buttonRegister.setOnClickListener { view: View -> validateInput(view) }
         binding.buttonSignin.setOnClickListener { view: View -> validateInput(view) }
         return binding.root

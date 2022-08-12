@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ShoeListFragment">
+    <!-- Constraint Layout: Because i can arrange the UI Elements freely, helpful for the FAB -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -26,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent">
+            <!-- Linear Layout: Because its a list of Buttons witch ar vertical stacked -->
 
             <LinearLayout
                 android:id="@+id/shoe_list"

@@ -10,6 +10,7 @@
             name="shoeListViewModel"
             type="com.example.shoestore.models.ShoeListViewModel" />
     </data>
+    <!-- Constraint Layout: Because i can arrange the UI Elements freely -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

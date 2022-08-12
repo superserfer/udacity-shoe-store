@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".LoginFragment">
+    <data>
+        <variable
+            name="shoeListViewModel"
+            type="com.example.shoestore.models.ShoeListViewModel" />
+    </data>
+
+    <!-- Constraint Layout: Because i can arrange the UI Elements freely -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,6 +24,7 @@
             android:layout_marginRight="@dimen/fragment_horizontal_margin"
             android:autofillHints="emailAddress"
             android:ems="10"
+            android:text="@={shoeListViewModel.email}"
             android:hint="@string/prompt_email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
@@ -28,6 +36,7 @@
             android:id="@+id/editTextTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@={shoeListViewModel.password}"
             android:layout_marginLeft="@dimen/fragment_horizontal_margin"
             android:layout_marginTop="@dimen/vertical_margin"
             android:layout_marginRight="@dimen/fragment_horizontal_margin"
