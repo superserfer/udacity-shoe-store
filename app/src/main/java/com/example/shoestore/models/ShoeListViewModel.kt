@@ -6,13 +6,9 @@ import androidx.lifecycle.ViewModel
 
 class ShoeListViewModel: ViewModel() {
 
-    private val _email = MutableLiveData<String>()
-    val email: LiveData<String>
-        get() = _email
+    val email = MutableLiveData<String>()
 
-    private val _password = MutableLiveData<String>()
-    val password: LiveData<String>
-        get() = _password
+    val password = MutableLiveData<String>()
 
     private val _selectedShoe = MutableLiveData<Shoe>()
     val selectedShoe: LiveData<Shoe>
@@ -31,15 +27,15 @@ class ShoeListViewModel: ViewModel() {
     }
 
     fun logout() {
-        _email.value = ""
-        _password.value = ""
+        email.value = ""
+        password.value = ""
         _shoeList.value = mutableListOf<Shoe>()
     }
 
     init {
         _shoeList.value = mutableListOf<Shoe>()
         _selectedShoe.value = Shoe("", "", 0, "")
-        _email.value = ""
-        _password.value = ""
+        email.value = ""
+        password.value = ""
     }
 }
