@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".ShoeDetailFragment">
+
+    <data>
+        <variable
+            name="shoeListViewModel"
+            type="com.example.shoestore.models.ShoeListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/shoeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fragment_horizontal_margin"
+            android:layout_marginTop="@dimen/fragment_vertical_margin"
+            android:text="@{shoeListViewModel.selectedShoe.name}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="@dimen/normal_text_size" />
+
+        <TextView
+            android:id="@+id/shoeCompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{shoeListViewModel.selectedShoe.company}"
+            android:textSize="@dimen/normal_text_size"
+            android:layout_marginStart="@dimen/fragment_horizontal_margin"
+            android:layout_marginTop="@dimen/fragment_vertical_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoeName"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/shoeDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{shoeListViewModel.selectedShoe.description}"
+            android:textSize="@dimen/normal_text_size"
+            android:layout_marginStart="@dimen/fragment_horizontal_margin"
+            android:layout_marginTop="@dimen/fragment_vertical_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoeCompany"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/shoeSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`` + shoeListViewModel.selectedShoe.size}"
+            android:textSize="@dimen/normal_text_size"
+            android:layout_marginStart="@dimen/fragment_horizontal_margin"
+            android:layout_marginTop="@dimen/fragment_vertical_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoeDescription"
+            tools:layout_editor_absoluteX="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
